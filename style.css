@@ -1,0 +1,105 @@
+body {
+    background: #ffcce7; /* baby pink */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 420px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid #ff3f9e;
+    object-fit: cover;
+    margin-top: 20px;
+}
+
+h1 {
+    color: #ff3f9e;
+}
+
+.bio {
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.main-btn, .circle-btn, .tip-btn {
+    display: block;
+    background: #ff3f9e; /* dark pink */
+    color: white;
+    padding: 15px;
+    margin: 15px 0;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.main-btn:hover,
+.circle-btn:hover,
+.tip-btn:hover {
+    background: #e7368c;
+}
+
+.circle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.icon {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.back-btn {
+    margin-top: 25px;
+    display: inline-block;
+    padding: 12px 20px;
+    background: white;
+    border: 2px solid #ff3f9e;
+    color: #ff3f9e;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.tip-section {
+    margin: 25px 0;
+    padding: 20px;
+    background: #ffe6f2;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.5);
+}
+
+.tip-section h2 {
+    margin-bottom: 8px;
+    color: #ff4da6;
+}
+
+.tip-button {
+    display: inline-block;
+    background: #ff4da6;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.tip-button:hover {
+    background: #ff1a8c;
+}
