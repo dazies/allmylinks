@@ -251,11 +251,17 @@ h1::after {
     background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
     animation: twinkle 6s ease-in-out infinite;
     pointer-events: none;
+    z-index: 1; /* ensure the pseudo element stays behind content */
 }
 
-stripe-buy-button {
-    pointer-events: auto;
+/* ensure Stripe widget is above overlays and receives clicks */
+stripe-buy-button,
+stripe-buy-button * {
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 9999;
 }
+
 
 .tip-section h2 {
     position: relative;
