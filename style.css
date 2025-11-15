@@ -70,7 +70,7 @@
 body {
     background: linear-gradient(-45deg, #ffe4f5, #ffd4e5, #ffc4d5, #ffb4c5);
     background-size: 400% 400%;
-    animation: gradient-shift 15s ease infinite;
+    animation: gradient-shift 25s ease infinite;
     font-family: 'Segoe UI', system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -92,7 +92,7 @@ body {
     border: 5px solid #ffb3d9;
     object-fit: cover;
     margin-top: 20px;
-    animation: float 4s ease-in-out infinite, glow 3s ease-in-out infinite, fade-in-up 0.8s ease;
+    animation: float 6s ease-in-out infinite, glow 5s ease-in-out infinite, fade-in-up 0.8s ease;
     box-shadow: 0 15px 35px rgba(255,105,180,0.2), 0 0 25px rgba(255,182,193,0.15), inset 0 0 10px rgba(255,255,255,0.3);
 }
 
@@ -100,7 +100,7 @@ h1 {
     position: relative;
     background: linear-gradient(90deg, #ff69b4, #ffb3d9, #ff69b4, #ffb3d9);
     background-size: 300% 300%;
-    animation: gradient-text 4s ease infinite, pulse 3s ease-in-out infinite, fade-in-up 0.8s ease 0.2s both;
+    animation: gradient-text 6s ease infinite, pulse 5s ease-in-out infinite, fade-in-up 0.8s ease 0.2s both;
     font-size: 2.6rem;
     margin: 15px 0 8px;
     letter-spacing: 1px;
@@ -121,7 +121,7 @@ h1::after {
     height: 3px;
     background: linear-gradient(90deg, transparent, #ff69b4, transparent);
     border-radius: 2px;
-    animation: underline-glow 2s ease-in-out infinite;
+    animation: underline-glow 3s ease-in-out infinite;
 }
 
 .bio {
@@ -199,7 +199,7 @@ h1::after {
     border: 5px solid #ffb3d9;
     object-fit: cover;
     margin-top: 20px;
-    animation: float 4s ease-in-out infinite, glow 3s ease-in-out infinite;
+    animation: float 6s ease-in-out infinite, glow 5s ease-in-out infinite;
     box-shadow: 0 15px 35px rgba(255,105,180,0.2), 0 0 25px rgba(255,182,193,0.15), inset 0 0 10px rgba(255,255,255,0.3);
 }
 
@@ -235,7 +235,7 @@ h1::after {
     border-radius: 30px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(255,105,180,0.15), 0 0 20px rgba(255,182,193,0.1), inset 0 0 15px rgba(255,255,255,0.6);
-    animation: pulse 4s ease-in-out infinite, fade-in-up 0.8s ease 0.3s both;
+    animation: pulse 6s ease-in-out infinite, fade-in-up 0.8s ease 0.3s both;
     border: 2px solid rgba(255,182,193,0.4);
     position: relative;
     overflow: hidden;
@@ -249,7 +249,7 @@ h1::after {
     width: 200%;
     height: 200%;
     background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-    animation: twinkle 4s ease-in-out infinite;
+    animation: twinkle 6s ease-in-out infinite;
     pointer-events: none;
 }
 
@@ -330,7 +330,7 @@ stripe-buy-button {
     transform: translateY(-50%);
     font-size: 16px;
     opacity: 0;
-    animation: sparkle 1.5s ease-in-out infinite;
+    animation: sparkle 2.5s ease-in-out infinite;
 }
 
 @media (max-width: 480px) {
