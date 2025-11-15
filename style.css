@@ -1,8 +1,29 @@
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.9; transform: scale(1.02); }
+}
+
 body {
-    background: #ffcce7; /* baby pink */
-    font-family: Arial, sans-serif;
+    background: linear-gradient(-45deg, #ffcce7, #ffb3d9, #ff99cc, #ff80bf);
+    background-size: 400% 400%;
+    animation: gradient-shift 12s ease infinite;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     margin: 0;
     padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -16,37 +37,46 @@ body {
     width: 140px;
     height: 140px;
     border-radius: 50%;
-    border: 4px solid #ff3f9e;
+    border: 4px solid rgba(255,63,158,0.95);
     object-fit: cover;
     margin-top: 20px;
+    animation: float 3s ease-in-out infinite;
+    box-shadow: 0 10px 30px rgba(255,63,158,0.18);
 }
 
 h1 {
     color: #ff3f9e;
+    animation: pulse 3s ease-in-out infinite;
+    font-size: 2.4rem;
+    margin: 12px 0;
 }
 
 .bio {
     font-size: 15px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.15);
 }
 
 .main-btn, .circle-btn, .tip-btn {
     display: block;
-    background: #ff3f9e; /* dark pink */
+    background: linear-gradient(180deg,#ff5aa6,#ff3f9e);
     color: white;
-    padding: 15px;
-    margin: 15px 0;
+    padding: 14px;
+    margin: 14px 0;
     text-decoration: none;
     border-radius: 12px;
     font-size: 18px;
-    font-weight: bold;
-    transition: 0.2s;
+    font-weight: 700;
+    transition: transform .25s ease, box-shadow .25s ease;
+    box-shadow: 0 6px 18px rgba(255,63,158,0.22);
 }
 
 .main-btn:hover,
 .circle-btn:hover,
 .tip-btn:hover {
-    background: #e7368c;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(255,63,158,0.32);
 }
 
 .circle-btn {
@@ -57,52 +87,71 @@ h1 {
 }
 
 .icon {
-width: 140px;
+    width: 140px;
     height: 140px;
     border-radius: 50%;
     border: 4px solid #ffcce7;
     object-fit: cover;
     margin-top: 20px;
+    animation: float 3s ease-in-out infinite;
 }
 
 .back-btn {
-    margin-top: 25px;
+    margin-top: 20px;
     display: inline-block;
-    padding: 12px 20px;
+    padding: 10px 16px;
     background: white;
     border: 2px solid #ff3f9e;
     color: #ff3f9e;
-    font-weight: bold;
+    font-weight: 700;
     border-radius: 10px;
     text-decoration: none;
+    transition: background .25s ease, color .25s ease;
+}
+
+.back-btn:hover {
+    background: #ff3f9e;
+    color: #fff;
 }
 
 .tip-section {
-    margin: 25px 0;
-    padding: 20px;
-    background: #ffe6f2;
+    margin: 22px 0;
+    padding: 18px;
+    background: rgba(255,230,242,0.92);
     border-radius: 18px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.5);
+    box-shadow: 0 8px 24px rgba(255,182,193,0.18);
+    animation: pulse 4s ease-in-out infinite;
 }
 
 .tip-section h2 {
     margin-bottom: 8px;
     color: #ff4da6;
+    font-size: 1.25rem;
 }
 
 .tip-button {
     display: inline-block;
-    background: #ff4da6;
+    background: linear-gradient(180deg,#ff6aa8,#ff3f9e);
     color: white;
-    padding: 12px 20px;
-    font-size: 18px;
-    border-radius: 25px;
+    padding: 12px 22px;
+    font-size: 17px;
+    border-radius: 24px;
     text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s ease;
+    font-weight: 700;
+    transition: transform .18s ease, box-shadow .18s ease;
+    box-shadow: 0 8px 22px rgba(255,77,166,0.18);
 }
 
 .tip-button:hover {
-    background: #ff1a8c;
+    transform: scale(1.04);
+    box-shadow: 0 14px 34px rgba(255,77,166,0.28);
+    background: linear-gradient(180deg,#ff2a7a,#ff0066);
+}
+
+@media (max-width: 480px) {
+    .container { padding: 18px; }
+    h1 { font-size: 2rem; }
+    .profile-img, .icon { width: 120px; height: 120px; }
+    .main-btn, .tip-button { font-size: 16px; padding: 12px; }
 }
