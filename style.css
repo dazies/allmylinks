@@ -24,6 +24,49 @@
     50% { opacity: 1; }
 }
 
+@keyframes gradient-text {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bounce-click {
+    0%, 100% { transform: translateY(-5px) scale(1.02); }
+    50% { transform: translateY(-15px) scale(1.05); }
+}
+
+@keyframes float-particle {
+    0% { 
+        opacity: 1; 
+        transform: translateY(0) translateX(0) scale(1);
+    }
+    100% { 
+        opacity: 0; 
+        transform: translateY(-80px) translateX(var(--tx)) scale(0);
+    }
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes underline-glow {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
 body {
     background: linear-gradient(-45deg, #ffe4f5, #ffd4e5, #ffc4d5, #ffb4c5);
     background-size: 400% 400%;
@@ -33,6 +76,7 @@ body {
     padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="%23ff69b4" d="M16 2c-7.7 0-14 6.3-14 14s6.3 14 14 14 14-6.3 14-14-6.3-14-14-14zm0 24c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10z"/><circle cx="16" cy="16" r="3" fill="%23ff69b4"/></svg>') 16 16, auto;
 }
 
 .container {
@@ -49,18 +93,36 @@ body {
     border: 5px solid #ffb3d9;
     object-fit: cover;
     margin-top: 20px;
-    animation: float 4s ease-in-out infinite, glow 3s ease-in-out infinite;
+    animation: float 4s ease-in-out infinite, glow 3s ease-in-out infinite, fade-in-up 0.8s ease;
     box-shadow: 0 15px 35px rgba(255,105,180,0.2), 0 0 25px rgba(255,182,193,0.15), inset 0 0 10px rgba(255,255,255,0.3);
 }
 
 h1 {
-    color: #ff69b4;
-    animation: pulse 3s ease-in-out infinite;
+    position: relative;
+    background: linear-gradient(90deg, #ff69b4, #ffb3d9, #ff69b4, #ffb3d9);
+    background-size: 300% 300%;
+    animation: gradient-text 4s ease infinite, pulse 3s ease-in-out infinite, fade-in-up 0.8s ease 0.2s both;
     font-size: 2.6rem;
     margin: 15px 0 8px;
     letter-spacing: 1px;
-    text-shadow: 0 3px 8px rgba(255,105,180,0.15), 0 0 20px rgba(255,182,193,0.1);
     font-weight: 800;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ff69b4, transparent);
+    border-radius: 2px;
+    animation: underline-glow 2s ease-in-out infinite;
 }
 
 .bio {
@@ -69,9 +131,11 @@ h1 {
     color: #ffffff;
     text-shadow: 0 2px 6px rgba(255,105,180,0.12);
     line-height: 1.6;
+    animation: fade-in-up 0.8s ease 0.3s both;
 }
 
 .main-btn, .circle-btn, .tip-btn {
+    position: relative;
     display: block;
     background: linear-gradient(135deg, #ffb3d9 0%, #ffa3d0 100%);
     color: #fff;
@@ -85,6 +149,27 @@ h1 {
     box-shadow: 0 8px 20px rgba(255,105,180,0.2), 0 0 15px rgba(255,182,193,0.1);
     border: none;
     cursor: pointer;
+    overflow: hidden;
+    animation: fade-in-up 0.8s ease 0.4s both;
+}
+
+.main-btn::before,
+.circle-btn::before,
+.tip-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    transition: left 0.5s ease;
+}
+
+.main-btn:hover::before,
+.circle-btn:hover::before,
+.tip-btn:hover::before {
+    left: 100%;
 }
 
 .main-btn:hover,
@@ -95,8 +180,10 @@ h1 {
     background: linear-gradient(135deg, #ff99cc 0%, #ff89c3 100%);
 }
 
-.main-btn:active {
-    transform: translateY(-2px) scale(0.98);
+.main-btn:active,
+.circle-btn:active,
+.tip-btn:active {
+    animation: bounce-click 0.5s ease;
 }
 
 .circle-btn {
@@ -122,6 +209,7 @@ h1 {
     display: inline-block;
     padding: 12px 24px;
     background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
     border: 2.5px solid #ffb3d9;
     color: #ff69b4;
     font-weight: 700;
@@ -130,6 +218,7 @@ h1 {
     transition: all .3s ease;
     box-shadow: 0 5px 15px rgba(255,105,180,0.12);
     font-size: 15px;
+    animation: fade-in-up 0.8s ease 0.5s both;
 }
 
 .back-btn:hover {
@@ -142,15 +231,30 @@ h1 {
 .tip-section {
     margin: 25px 0;
     padding: 22px;
-    background: linear-gradient(135deg, rgba(255,240,245,0.95) 0%, rgba(255,230,240,0.95) 100%);
+    background: linear-gradient(135deg, rgba(255,240,245,0.85) 0%, rgba(255,230,240,0.85) 100%);
+    backdrop-filter: blur(20px);
     border-radius: 30px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(255,105,180,0.15), 0 0 20px rgba(255,182,193,0.1), inset 0 0 15px rgba(255,255,255,0.4);
-    animation: pulse 4s ease-in-out infinite;
-    border: 2px solid rgba(255,182,193,0.3);
+    box-shadow: 0 10px 30px rgba(255,105,180,0.15), 0 0 20px rgba(255,182,193,0.1), inset 0 0 15px rgba(255,255,255,0.6);
+    animation: pulse 4s ease-in-out infinite, fade-in-up 0.8s ease 0.3s both;
+    border: 2px solid rgba(255,182,193,0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.tip-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: twinkle 4s ease-in-out infinite;
 }
 
 .tip-section h2 {
+    position: relative;
     margin-bottom: 10px;
     margin-top: 0;
     color: #ff69b4;
@@ -161,12 +265,14 @@ h1 {
 }
 
 .tip-section p {
+    position: relative;
     color: #ff8fc7;
     font-size: 14px;
     margin: 8px 0;
 }
 
 .tip-button {
+    position: relative;
     display: inline-block;
     background: linear-gradient(135deg, #ffb3d9 0%, #ffa3d0 100%);
     color: white;
@@ -180,12 +286,47 @@ h1 {
     border: none;
     cursor: pointer;
     margin-top: 8px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.tip-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.tip-button:hover::before {
+    left: 100%;
 }
 
 .tip-button:hover {
     transform: translateY(-4px) scale(1.03);
     box-shadow: 0 12px 30px rgba(255,105,180,0.3), 0 0 25px rgba(255,182,193,0.2);
     background: linear-gradient(135deg, #ff99cc 0%, #ff89c3 100%);
+}
+
+.tip-button:active {
+    animation: bounce-click 0.5s ease;
+}
+
+/* Sparkle effects behind buttons */
+.main-btn::after,
+.tip-button::after {
+    content: '✨';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    opacity: 0;
+    animation: sparkle 1.5s ease-in-out infinite;
 }
 
 @media (max-width: 480px) {
