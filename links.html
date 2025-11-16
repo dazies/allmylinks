@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All My Links</title>
     <link rel="stylesheet" href="style.css">
+
+    <script>
+  fetch('https://ipapi.co/json/')
+    .then(response => response.json())
+    .then(data => {
+      const blockedStates = ['IL', 'IN']; // Illinois, Indiana
+      if (blockedStates.includes(data.region_code)) {
+        // Redirect to blocked page or home
+        window.location.href = '/blocked.html';
+      }
+    })
+    .catch(error => console.log('Geolocation check failed'));
+</script>
+
 </head>
 <body>
 
