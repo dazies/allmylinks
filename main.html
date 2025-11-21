@@ -1,39 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Princess Stormy</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Princess Stormy</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <div class="container">
+  <!-- banner/header -->
+  <div class="profile-header" role="img" aria-label="Banner image"></div>
 
-        <img src="images/profile.jpg" class="profile-img" alt="Profile">
+  <div class="container">
 
-        <h1>Princess Stormy 🎀</h1>
-        <p class="bio">Heyy! These are all of my payment methods as well as links!</p>
-
-         <div class="tip-section">
-            <h2>Send Me a Tip 💖</h2>
-            <p>Make payments for tips, my dm fee, tasks, or orders using Stripe!</p>
-            <stripe-buy-button
-              buy-button-id="buy_btn_1STciPQHjWhRyFbGuyzuDZj1"
-              publishable-key="pk_live_51SRpRbQHjWhRyFbGmBXUYiOi1nqVr4iYMWcOVguB2PMMdKzGUYiqYN00586ZGFtkcSyKa40pykELTyILAaw8Fyvd00fm0TimSb"
-            >
-            </stripe-buy-button>
-        </div>
-
-        <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-
-
-        <a class="main-btn" href="payments.html">Payment Methods</a>
-        <a class="main-btn" href="links.html">All My Links</a>
-
-        <p>And Yes!!! I coded this website all by myself!🎀 </p>
+    <!-- avatar + right-side icon buttons -->
+    <div class="avatar-wrapper">
+      <img src="images/profile.jpg" class="profile-img avatar" alt="Profile" />
 
     </div>
+
+    <h1>Princess Stormy 🎀</h1>
+    <p class="bio">Heyy! This is my official personal website that I coded for fun with all of my payment methods and links. </p>
+
+    <div class="tip-section">
+      
+      <p>Make payments for tips, my dm fee, tasks, or orders using Stripe!</p>
+
+      <stripe-buy-button
+        buy-button-id="buy_btn_1STciPQHjWhRyFbGuyzuDZj1"
+        publishable-key="pk_live_51SRpRbQHjWhRyFbGmBXUYiOi1nqVr4iYMWcOVguB2PMMdKzGUYiqYN00586ZGFtkcSyKa40pykELTyILAaw8Fyvd00fm0TimSb"
+        style="pointer-events:auto;"
+      >
+      </stripe-buy-button>
+    </div>
+
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
+    <a class="main-btn" href="payments.html">Payment Methods</a>
+    <a class="main-btn" href="links.html">All My Links</a>
+
+    <p>NOTE: People have been stealing my content lately and using it to scam others. This is my ONLY page (besides my linktree - stormy.xo) with all of my proper pages and payment methods! 🎀</p>
+  </div>
 
 </body>
 </html>
