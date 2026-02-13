@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Where I Promote</title>
     <link rel="stylesheet" href="style.css">
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <style>
         .promote-container {
             max-width: 900px;
@@ -26,7 +27,7 @@
             padding: 20px;
             box-shadow: 0 10px 30px rgba(255, 105, 180, 0.12);
             border: 2px solid rgba(255, 182, 193, 0.3);
-            overflow: hidden;
+            overflow: visible;
             animation: fade-in-up 0.8s ease;
         }
 
@@ -54,12 +55,16 @@
             border-radius: 12px;
             background: #f9f9f9;
             padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .twitter-feed {
+            overflow: visible !important;
         }
 
         /* Twitter Timeline Styling */
         .twitter-timeline {
-            max-height: 500px;
-            overflow-y: auto;
+            max-height: 450px;
         }
 
         /* Reddit Embed Styling */
@@ -70,7 +75,6 @@
 
         .feed-link-btn {
             display: inline-block;
-            margin-top: 15px;
             background: linear-gradient(135deg, #ffb3d9 0%, #ffa3d0 100%);
             color: white;
             padding: 12px 24px;
@@ -84,7 +88,6 @@
             cursor: pointer;
             width: 100%;
             text-align: center;
-            margin-top: 10px;
         }
 
         .feed-link-btn:hover {
@@ -133,9 +136,8 @@
             <!-- Twitter/X Feed -->
             <div class="feed-card">
                 <h2><span class="feed-icon">𝕏</span> X (Twitter)</h2>
-                <div class="feed-content twitter-timeline">
-                    <a class="twitter-timeline" data-height="400" href="https://twitter.com/stormladyy?ref_src=twsrc%5Etfw">Tweets by stormladyy</a>
-                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <div class="feed-content twitter-feed">
+                    <a class="twitter-timeline" data-height="450" href="https://x.com/stormladyy">Tweets by stormladyy</a>
                 </div>
                 <a href="https://x.com/stormladyy" target="_blank" class="feed-link-btn">Visit My X Profile →</a>
             </div>
@@ -144,9 +146,9 @@
             <div class="feed-card">
                 <h2><span class="feed-icon">🔴</span> Reddit</h2>
                 <div class="feed-content reddit-embed">
-                    <iframe src="https://www.reddit.com/r/u_stormlady/new/.embed" width="100%" height="400" frameborder="0" scrolling="no" allow="web-share" style="border-radius: 12px;"></iframe>
+                    <iframe src="https://www.reddit.com/user/storm-lady/new/.embed" width="100%" height="450" frameborder="0" scrolling="no" allow="web-share" style="border-radius: 12px;"></iframe>
                 </div>
-                <a href="https://www.reddit.com/user/stormlady/" target="_blank" class="feed-link-btn">Visit My Reddit Profile →</a>
+                <a href="https://www.reddit.com/user/storm-lady/" target="_blank" class="feed-link-btn">Visit My Reddit Profile →</a>
             </div>
         </div>
 
