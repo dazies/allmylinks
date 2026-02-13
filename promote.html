@@ -120,6 +120,16 @@
             font-weight: 700;
         }
 
+        /* OnlyFans card specific sizing (smaller) */
+        .feed-card.onlyfans {
+            padding: 24px 20px;
+        }
+
+        .feed-card.onlyfans .feed-description {
+            min-height: 44px;
+            font-size: 14px;
+        }
+
         .feed-icon {
             width: 50px;
             height: 50px;
@@ -265,6 +275,7 @@
     </style>
 </head>
 <body>
+    <div class="site-inner">
     <!-- Navigation -->
     <nav class="navbar">
         <a href="main.html" class="logo">Stormlady 🎀</a>
@@ -304,7 +315,7 @@
             </div>
 
             <!-- OnlyFans Card -->
-            <div class="feed-card">
+            <div class="feed-card onlyfans">
                 <h2><span class="feed-icon">❤️</span> Free OnlyFans</h2>
                 <p class="feed-description">I post on here sometimes, but i am WAYYYYYY more active on my main onlyfans page! (@stormladyy)</p>
                 <a href="https://onlyfans.com/stormladyy.xo" target="_blank" class="feed-link-btn">Join My Free OnlyFans →</a>
@@ -312,6 +323,7 @@
         </div>
 
         <a class="back-btn" href="main.html">⬅ Back to Home</a>
+    </div>
     </div>
 </body>
 </html>
