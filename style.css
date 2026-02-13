@@ -68,9 +68,8 @@
 }
 
 body {
-    background: linear-gradient(-45deg, #ffe4f5, #ffd4e5, #ffc4d5, #ffb4c5);
-    background-size: 400% 400%;
-    animation: gradient-shift 25s ease infinite;
+    background: linear-gradient(135deg, #fff0f7 0%, #ffe4f0 50%, #ffd4e5 100%);
+    background-attachment: fixed;
     font-family: 'Segoe UI', system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -92,15 +91,15 @@ body {
     border: 5px solid #ffb3d9;
     object-fit: cover;
     margin-top: 20px;
-    animation: float 6s ease-in-out infinite, glow 5s ease-in-out infinite, fade-in-up 0.8s ease;
-    box-shadow: 0 15px 35px rgba(255,105,180,0.2), 0 0 25px rgba(255,182,193,0.15), inset 0 0 10px rgba(255,255,255,0.3);
+    animation: fade-in-up 0.8s ease;
+    box-shadow: 0 15px 35px rgba(255,105,180,0.15), 0 0 25px rgba(255,182,193,0.1);
 }
 
 h1 {
     position: relative;
-    background: linear-gradient(90deg, #ff69b4, #ffb3d9, #ff69b4, #ffb3d9);
-    background-size: 300% 300%;
-    animation: gradient-text 6s ease infinite, pulse 5s ease-in-out infinite, fade-in-up 0.8s ease 0.2s both;
+    background: linear-gradient(90deg, #ff69b4, #ffb3d9);
+    background-size: 200% 200%;
+    animation: fade-in-up 0.8s ease 0.2s both;
     font-size: 2.6rem;
     margin: 15px 0 8px;
     letter-spacing: 1px;
@@ -199,8 +198,8 @@ h1::after {
     border: 5px solid #ffb3d9;
     object-fit: cover;
     margin-top: 20px;
-    animation: float 6s ease-in-out infinite, glow 5s ease-in-out infinite;
-    box-shadow: 0 15px 35px rgba(255,105,180,0.2), 0 0 25px rgba(255,182,193,0.15), inset 0 0 10px rgba(255,255,255,0.3);
+    animation: fade-in-up 0.8s ease;
+    box-shadow: 0 15px 35px rgba(255,105,180,0.15), 0 0 25px rgba(255,182,193,0.1);
 }
 
 .back-btn {
@@ -230,13 +229,13 @@ h1::after {
 .tip-section {
     margin: 25px 0;
     padding: 22px;
-    background: linear-gradient(135deg, rgba(255,240,245,0.85) 0%, rgba(255,230,240,0.85) 100%);
+    background: linear-gradient(135deg, rgba(255,240,245,0.90) 0%, rgba(255,230,240,0.90) 100%);
     backdrop-filter: blur(20px);
     border-radius: 30px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(255,105,180,0.15), 0 0 20px rgba(255,182,193,0.1), inset 0 0 15px rgba(255,255,255,0.6);
-    animation: pulse 6s ease-in-out infinite, fade-in-up 0.8s ease 0.3s both;
-    border: 2px solid rgba(255,182,193,0.4);
+    box-shadow: 0 10px 30px rgba(255,105,180,0.12), 0 0 20px rgba(255,182,193,0.08);
+    animation: fade-in-up 0.8s ease 0.3s both;
+    border: 2px solid rgba(255,182,193,0.3);
     position: relative;
     overflow: hidden;
 }
@@ -345,4 +344,43 @@ stripe-buy-button * {
     .profile-img, .icon { width: 130px; height: 130px; }
     .main-btn, .tip-button { font-size: 15px; padding: 13px 20px; }
     .tip-section { padding: 18px; }
+}
+
+
+/* Twitter-style header + avatar + icon buttons */
+.profile-header{
+    height: 200px;              /* banner visible height (use 1500x500 scaled) */
+    background: center/cover no-repeat url('images/Storm.jpg');
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+}
+
+/* wrapper keeps avatar and buttons aligned */
+.avatar-wrapper{
+    position: relative;
+    margin-top: -70px; /* pull up so avatar overlaps header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-direction: column;
+}
+
+/* larger circular avatar overlapping header */
+.profile-img.avatar{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 6px solid rgba(255,255,255,0.9);
+    box-shadow: 0 10px 30px rgba(255,105,180,0.18);
+    object-fit: cover;
+    background: #fff;
+}
+
+
+/* adjust small-screen layout */
+@media (max-width: 540px){
+    .profile-header{ height: 160px; }
+    .profile-img.avatar{ width: 120px; height: 120px; margin-top: -60px; }
+    .icon-buttons{ right: 14px; top: 18px; }
 }

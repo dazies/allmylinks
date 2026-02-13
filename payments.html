@@ -5,28 +5,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Methods</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .payment-content {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 25px;
+        }
+
+        .payment-section {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.12);
+            border: 2px solid rgba(255, 182, 193, 0.3);
+            margin-bottom: 25px;
+            animation: fade-in-up 0.8s ease;
+        }
+
+        .payment-section h2 {
+            color: #ff69b4;
+            font-size: 1.5rem;
+            margin: 0 0 20px 0;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .payment-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .payment-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #ffb3d9 0%, #ffa3d0 100%);
+            color: white;
+            padding: 16px 20px;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.2);
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+
+        .payment-btn-icon {
+            font-size: 1.3rem;
+        }
+
+        .payment-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 105, 180, 0.3);
+            background: linear-gradient(135deg, #ff99cc 0%, #ff89c3 100%);
+        }
+
+        .payment-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .tip-section-payment {
+            background: linear-gradient(135deg, rgba(255, 240, 245, 0.95) 0%, rgba(255, 230, 240, 0.95) 100%);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.12);
+            border: 2px solid rgba(255, 182, 193, 0.3);
+            animation: fade-in-up 0.8s ease 0.1s both;
+        }
+
+        .tip-section-payment h3 {
+            color: #ff69b4;
+            font-size: 1.3rem;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+        }
+
+        .tip-section-payment p {
+            color: #888;
+            font-size: 14px;
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+
+        /* Stripe Buy Button Container */
+        stripe-buy-button {
+            pointer-events: auto !important;
+            position: relative;
+            z-index: 9999;
+        }
+
+        .stripe-container {
+            margin: 20px 0;
+        }
+
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .payment-content {
+                padding: 15px;
+            }
+
+            .payment-section,
+            .tip-section-payment {
+                padding: 20px;
+            }
+
+            .payment-btn {
+                padding: 14px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="payment-content">
+        <h1>💖 Payment Methods 💖</h1>
+        <p class="bio">Choose your favorite way to send me a tip or payment! All methods are secure 🎀</p>
 
-    <div class="container">
+        <!-- Direct Payment Methods -->
+        <div class="payment-section">
+            <h2>Direct Payments</h2>
+            <div class="payment-grid">
+                <a href="https://cash.app/sincereslm" target="_blank" class="payment-btn">
+                    <span class="payment-btn-icon">💵</span>
+                    CashApp
+                </a>
+                <a href="https://paypal.me/sincereSLM" target="_blank" class="payment-btn">
+                    <span class="payment-btn-icon">🅿️</span>
+                    PayPal
+                </a>
+                <a href="https://throne.com/stormlady" target="_blank" class="payment-btn">
+                    <span class="payment-btn-icon">👑</span>
+                    My Throne
+                </a>
+            </div>
+        </div>
 
-        <h1>Payment Methods</h1>
+        <!-- Stripe Tips Section -->
+        <div class="tip-section-payment">
+            <h3>💳 Quick Stripe Tip</h3>
+            <p>Send me a tip for tasks, DM access, or just to support me! 💕</p>
+            <div class="stripe-container">
+                <stripe-buy-button
+                    buy-button-id="buy_btn_1STciPQHjWhRyFbGuyzuDZj1"
+                    publishable-key="pk_live_51SRpRbQHjWhRyFbGmBXUYiOi1nqVr4iYMWcOVguB2PMMdKzGUYiqYN00586ZGFtkcSyKa40pykELTyILAaw8Fyvd00fm0TimSb"
+                    style="pointer-events:auto;">
+                </stripe-buy-button>
+            </div>
+            <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+        </div>
 
-        <a class="circle-btn" href="https://cash.app/sincereslm">
-            <img src="images/cashapp.png" class="icon"> My CashApp
-        </a>
-
-        <a class="circle-btn" href="https://paypal.me/sincereSLM">
-            <img src="images/paypal.png" class="icon"> My PayPal
-        </a>
-
-        <a class="circle-btn" href="https://throne.com/stormlady">
-            <img src="images/Throne.png" class="icon"> My Throne
-        </a>
-
-        <a class="back-btn" href="main.html">⬅ Back</a>
-
+        <a class="back-btn" href="main.html">⬅ Back to Home</a>
     </div>
-
 </body>
 </html>

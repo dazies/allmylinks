@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where I Promote</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .promote-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 25px;
+        }
+
+        .feed-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .feed-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.12);
+            border: 2px solid rgba(255, 182, 193, 0.3);
+            overflow: hidden;
+            animation: fade-in-up 0.8s ease;
+        }
+
+        .feed-card h2 {
+            color: #ff69b4;
+            font-size: 1.6rem;
+            margin: 0 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feed-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .feed-content {
+            max-height: 500px;
+            overflow-y: auto;
+            border-radius: 12px;
+            background: #f9f9f9;
+            padding: 15px;
+        }
+
+        /* Twitter Timeline Styling */
+        .twitter-timeline {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        /* Reddit Embed Styling */
+        .reddit-embed {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .feed-link-btn {
+            display: inline-block;
+            margin-top: 15px;
+            background: linear-gradient(135deg, #ffb3d9 0%, #ffa3d0 100%);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.2);
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .feed-link-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(255, 105, 180, 0.3);
+            background: linear-gradient(135deg, #ff99cc 0%, #ff89c3 100%);
+        }
+
+        @media (max-width: 768px) {
+            .feed-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .promote-container {
+                padding: 15px;
+            }
+
+            .feed-card {
+                padding: 15px;
+            }
+
+            .feed-card h2 {
+                font-size: 1.4rem;
+            }
+        }
+
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="promote-container">
+        <h1>🌟 Where I Promote 🌟</h1>
+        <p class="bio">Check out where I post my free content! Follow me for the latest updates and exclusive posts 💕</p>
+
+        <div class="feed-grid">
+            <!-- Twitter/X Feed -->
+            <div class="feed-card">
+                <h2><span class="feed-icon">𝕏</span> X (Twitter)</h2>
+                <div class="feed-content twitter-timeline">
+                    <a class="twitter-timeline" data-height="400" href="https://twitter.com/stormladyy?ref_src=twsrc%5Etfw">Tweets by stormladyy</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+                <a href="https://x.com/stormladyy" target="_blank" class="feed-link-btn">Visit My X Profile →</a>
+            </div>
+
+            <!-- Reddit Feed -->
+            <div class="feed-card">
+                <h2><span class="feed-icon">🔴</span> Reddit</h2>
+                <div class="feed-content reddit-embed">
+                    <iframe src="https://www.reddit.com/r/u_stormlady/new/.embed" width="100%" height="400" frameborder="0" scrolling="no" allow="web-share" style="border-radius: 12px;"></iframe>
+                </div>
+                <a href="https://www.reddit.com/user/stormlady/" target="_blank" class="feed-link-btn">Visit My Reddit Profile →</a>
+            </div>
+        </div>
+
+        <a class="back-btn" href="main.html">⬅ Back to Home</a>
+    </div>
+</body>
+</html>

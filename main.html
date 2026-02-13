@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Princess Stormy</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .main-buttons-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    @media (max-width: 480px) {
+      .main-buttons-grid {
+        gap: 12px;
+        margin: 25px 0;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -16,14 +31,12 @@
     <!-- avatar + right-side icon buttons -->
     <div class="avatar-wrapper">
       <img src="images/profile.jpg" class="profile-img avatar" alt="Profile" />
-
     </div>
 
     <h1>Princess Stormy 🎀</h1>
     <p class="bio">Heyy! This is my official personal website that I coded for fun with all of my payment methods and links. </p>
 
     <div class="tip-section">
-      
       <p>Make payments for tips, my dm fee, tasks, or orders using Stripe!</p>
 
       <stripe-buy-button
@@ -36,8 +49,11 @@
 
     <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 
-    <a class="main-btn" href="payments.html">Payment Methods</a>
-    <a class="main-btn" href="links.html">All My Links</a>
+    <div class="main-buttons-grid">
+      <a class="main-btn" href="payments.html">💖 Payment Methods</a>
+      <a class="main-btn" href="promote.html">🌟 Where I Promote</a>
+      <a class="main-btn" href="exclusive.html">🔐 Exclusive Only</a>
+    </div>
 
     <p>NOTE: People have been stealing my content lately and using it to scam others. This is my ONLY page (besides my linktree - stormy.xo) with all of my proper pages and payment methods! 🎀</p>
   </div>
