@@ -7,26 +7,40 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .payment-content {
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 auto;
-            padding: 25px;
+            padding: 40px 25px;
+        }
+
+        .payment-content h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .payment-intro {
+            text-align: center;
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 35px;
+            line-height: 1.6;
         }
 
         .payment-section {
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.12);
-            border: 2px solid rgba(255, 182, 193, 0.3);
-            margin-bottom: 25px;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(196, 30, 58, 0.1);
+            border: 2px solid rgba(196, 30, 58, 0.15);
+            margin-bottom: 30px;
             animation: fade-in-up 0.8s ease;
         }
 
         .payment-section h2 {
-            color: #ff69b4;
+            color: #c41e3a;
+            font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
-            margin: 0 0 20px 0;
+            margin: 0 0 25px 0;
             text-align: center;
             font-weight: 700;
         }
@@ -43,15 +57,15 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            background: linear-gradient(135deg, #ffb3d9 0%, #ffa3d0 100%);
+            background: linear-gradient(135deg, #c41e3a 0%, #a01730 100%);
             color: white;
             padding: 16px 20px;
             text-decoration: none;
-            border-radius: 20px;
-            font-weight: 700;
+            border-radius: 25px;
+            font-weight: 600;
             font-size: 15px;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.2);
+            box-shadow: 0 8px 20px rgba(196, 30, 58, 0.2);
             border: none;
             cursor: pointer;
             width: 100%;
@@ -64,8 +78,8 @@
 
         .payment-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(255, 105, 180, 0.3);
-            background: linear-gradient(135deg, #ff99cc 0%, #ff89c3 100%);
+            box-shadow: 0 12px 30px rgba(196, 30, 58, 0.3);
+            background: linear-gradient(135deg, #a01730 0%, #8a1428 100%);
         }
 
         .payment-btn:active {
@@ -73,27 +87,29 @@
         }
 
         .tip-section-payment {
-            background: linear-gradient(135deg, rgba(255, 240, 245, 0.95) 0%, rgba(255, 230, 240, 0.95) 100%);
-            border-radius: 20px;
-            padding: 25px;
+            background: linear-gradient(135deg, #fff9f7 0%, #fef5f1 100%);
+            border-radius: 15px;
+            padding: 30px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.12);
-            border: 2px solid rgba(255, 182, 193, 0.3);
+            box-shadow: 0 10px 30px rgba(196, 30, 58, 0.1);
+            border: 2px solid rgba(196, 30, 58, 0.15);
             animation: fade-in-up 0.8s ease 0.1s both;
         }
 
         .tip-section-payment h3 {
-            color: #ff69b4;
+            color: #c41e3a;
+            font-family: 'Playfair Display', serif;
             font-size: 1.3rem;
             margin: 0 0 10px 0;
             font-weight: 700;
         }
 
         .tip-section-payment p {
-            color: #888;
+            color: #666;
             font-size: 14px;
             margin: 8px 0;
             line-height: 1.5;
+            font-weight: 300;
         }
 
         /* Stripe Buy Button Container */
@@ -120,12 +136,12 @@
 
         @media (max-width: 480px) {
             .payment-content {
-                padding: 15px;
+                padding: 30px 15px;
             }
 
             .payment-section,
             .tip-section-payment {
-                padding: 20px;
+                padding: 25px 20px;
             }
 
             .payment-btn {
@@ -137,8 +153,8 @@
 </head>
 <body>
     <div class="payment-content">
-        <h1>💖 Payment Methods 💖</h1>
-        <p class="bio">Choose your favorite way to send me a tip or payment! All methods are secure 🎀</p>
+        <h1>💖 Payment Methods</h1>
+        <p class="payment-intro">Choose your favorite way to send me a tip or payment! All methods are secure 🎀</p>
 
         <!-- Direct Payment Methods -->
         <div class="payment-section">

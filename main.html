@@ -6,17 +6,97 @@
   <title>Princess Stormy</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    .hero-section {
+      position: relative;
+      padding: 40px 25px;
+      margin-bottom: 40px;
+      background: linear-gradient(135deg, rgba(255, 248, 246, 0.8), rgba(255, 245, 241, 0.8));
+      border-bottom: 2px solid rgba(196, 30, 58, 0.1);
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2.8rem;
+      margin: 0 0 15px 0;
+      line-height: 1.1;
+    }
+
+    .hero-text p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 10px;
+      border: 4px solid #c41e3a;
+      box-shadow: 0 20px 50px rgba(196, 30, 58, 0.15);
+      animation: fade-in-up 0.8s ease;
+    }
+
     .main-buttons-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 15px;
-      margin: 30px 0;
+      margin: 35px 0;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .note-section {
+      background: linear-gradient(135deg, #fff9f7, #fef5f1);
+      padding: 25px;
+      border-radius: 15px;
+      border-left: 4px solid #c41e3a;
+      margin-top: 40px;
+      box-shadow: 0 5px 15px rgba(196, 30, 58, 0.08);
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+      }
     }
 
     @media (max-width: 480px) {
-      .main-buttons-grid {
-        gap: 12px;
-        margin: 25px 0;
+      .hero-section {
+        padding: 30px 15px;
+      }
+
+      .hero-text h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-text p {
+        font-size: 14px;
       }
     }
   </style>
@@ -27,35 +107,47 @@
   <div class="profile-header" role="img" aria-label="Banner image"></div>
 
   <div class="container">
-
-    <!-- avatar + right-side icon buttons -->
+    <!-- avatar -->
     <div class="avatar-wrapper">
       <img src="images/profile.jpg" class="profile-img avatar" alt="Profile" />
     </div>
 
     <h1>Princess Stormy 🎀</h1>
-    <p class="bio">Heyy! This is my official personal website that I coded for fun with all of my payment methods and links. </p>
+    <p class="bio">Heyy! This is my official personal website that I coded for fun with all of my payment methods and links.</p>
 
-    <div class="tip-section">
-      <p>Make payments for tips, my dm fee, tasks, or orders using Stripe!</p>
-
-      <stripe-buy-button
-        buy-button-id="buy_btn_1STciPQHjWhRyFbGuyzuDZj1"
-        publishable-key="pk_live_51SRpRbQHjWhRyFbGmBXUYiOi1nqVr4iYMWcOVguB2PMMdKzGUYiqYN00586ZGFtkcSyKa40pykELTyILAaw8Fyvd00fm0TimSb"
-        style="pointer-events:auto;"
-      >
-      </stripe-buy-button>
+    <!-- Hero Section with Stripe -->
+    <div class="hero-section">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h2 style="font-family: 'Playfair Display', serif; color: #c41e3a; font-size: 1.8rem; margin: 0 0 15px 0;">Send me a Tip</h2>
+          <p>Support my content with a quick Stripe tip. Perfect for tasks, DM access, or just to show your support! 💕</p>
+          <div>
+            <stripe-buy-button
+              buy-button-id="buy_btn_1STciPQHjWhRyFbGuyzuDZj1"
+              publishable-key="pk_live_51SRpRbQHjWhRyFbGmBXUYiOi1nqVr4iYMWcOVguB2PMMdKzGUYiqYN00586ZGFtkcSyKa40pykELTyILAaw8Fyvd00fm0TimSb"
+              style="pointer-events:auto;">
+            </stripe-buy-button>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="images/logo1.png" alt="Featured content" />
+        </div>
+      </div>
     </div>
 
     <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 
+    <!-- Main Navigation Buttons -->
     <div class="main-buttons-grid">
       <a class="main-btn" href="payments.html">💖 My Payment Methods</a>
       <a class="main-btn" href="promote.html">🌟 Where I Promote + Free Content</a>
       <a class="main-btn" href="exclusive.html">🔐 Exclusive Only</a>
     </div>
 
-    <p>NOTE: People have been stealing my content lately and using it to scam others. This is my ONLY page (besides my linktree - stormy.xo) with all of my proper pages and payment methods! 🎀</p>
+    <!-- Note Section -->
+    <div class="note-section">
+      <strong style="color: #c41e3a;">⚠️ NOTE:</strong> People have been stealing my content lately and using it to scam others. This is my ONLY official page (besides my linktree - stormy.xo) with all of my proper pages and payment methods! Stay safe &amp; support the real me. 🎀
+    </div>
   </div>
 
 </body>
