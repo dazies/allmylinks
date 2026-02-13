@@ -46,6 +46,20 @@ body {
     color: #333;
 }
 
+.site-inner {
+    width: 80%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+    .site-inner { width: 92%; }
+}
+
+@media (max-width: 480px) {
+    .site-inner { width: 100%; padding: 0 12px; }
+}
+
 .container {
     max-width: 420px;
     margin: auto;
