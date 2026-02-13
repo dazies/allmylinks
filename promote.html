@@ -5,58 +5,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Where I Promote</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <style>
-        .promote-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 25px;
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(255, 20, 147, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .promote-container h1 {
-            text-align: center;
-            margin-bottom: 15px;
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #ff1493;
+            font-weight: 700;
+            text-decoration: none;
         }
 
-        .promote-intro {
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ff1493;
+        }
+
+        /* Hero Section */
+        .promote-hero {
+            padding: 80px 30px;
+            background: linear-gradient(135deg, #fff9f7 0%, #fff5f1 100%);
+            position: relative;
+            overflow: hidden;
             text-align: center;
+        }
+
+        .promote-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: #ff1493;
+            margin: 0 0 20px 0;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .promote-hero p {
+            font-size: 1.2rem;
             color: #666;
-            font-size: 15px;
-            margin-bottom: 40px;
+            max-width: 600px;
+            margin: 0 auto;
             line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Content Section */
+        .promote-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 30px;
+            background: #fff;
         }
 
         .feed-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 40px;
+            gap: 40px;
+            margin-bottom: 60px;
         }
 
         .feed-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(196, 30, 58, 0.1);
-            border: 2px solid rgba(196, 30, 58, 0.15);
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.1);
+            border: 2px solid rgba(255, 20, 147, 0.15);
             overflow: visible;
             animation: fade-in-up 0.8s ease;
+            transition: all 0.3s ease;
+        }
+
+        .feed-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255, 20, 147, 0.15);
         }
 
         .feed-card h2 {
-            color: #c41e3a;
-            font-size: 1.6rem;
+            color: #ff1493;
+            font-size: 1.8rem;
             font-family: 'Playfair Display', serif;
             margin: 0 0 20px 0;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            font-weight: 700;
         }
 
         .feed-icon {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -69,7 +135,7 @@
             border-radius: 12px;
             background: #f9f9f9;
             padding: 15px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .twitter-feed {
@@ -78,15 +144,15 @@
 
         .feed-link-btn {
             display: inline-block;
-            background: linear-gradient(135deg, #c41e3a 0%, #a01730 100%);
+            background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
             color: white;
-            padding: 12px 24px;
+            padding: 14px 28px;
             text-decoration: none;
             border-radius: 25px;
             font-weight: 600;
             font-size: 14px;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(196, 30, 58, 0.2);
+            box-shadow: 0 8px 20px rgba(255, 20, 147, 0.2);
             border: none;
             cursor: pointer;
             width: 100%;
@@ -94,28 +160,50 @@
         }
 
         .feed-link-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(196, 30, 58, 0.3);
-            background: linear-gradient(135deg, #a01730 0%, #8a1428 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 20, 147, 0.3);
+            background: linear-gradient(135deg, #ff1493 0%, #e91e63 100%);
         }
 
-        @media (max-width: 768px) {
-            .feed-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
+        /* Security Note */
+        .security-note {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 30px;
+            background: linear-gradient(135deg, #fff9f7, #fef5f1);
+            border-radius: 12px;
+            border-left: 5px solid #ff1493;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.8;
+        }
 
-            .promote-container {
-                padding: 30px 15px;
-            }
+        .security-note strong {
+            color: #ff1493;
+        }
 
-            .feed-card {
-                padding: 20px;
-            }
+        /* Back Button */
+        .back-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.90);
+            backdrop-filter: blur(10px);
+            border: 2px solid #ff1493;
+            color: #ff1493;
+            font-weight: 600;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all .3s ease;
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.1);
+            font-size: 14px;
+            margin-top: 40px;
+        }
 
-            .feed-card h2 {
-                font-size: 1.4rem;
-            }
+        .back-btn:hover {
+            background: #ff1493;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 20, 147, 0.2);
         }
 
         @keyframes fade-in-up {
@@ -128,12 +216,84 @@
                 transform: translateY(0);
             }
         }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .promote-hero {
+                padding: 50px 20px;
+            }
+
+            .promote-hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .promote-hero p {
+                font-size: 1rem;
+            }
+
+            .feed-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .promote-container {
+                padding: 30px 15px;
+            }
+
+            .feed-card {
+                padding: 25px;
+            }
+
+            .feed-card h2 {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .promote-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .feed-card {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="main.html" class="logo">Stormlady 🎀</a>
+        <ul class="nav-links">
+            <li><a href="main.html">Home</a></li>
+            <li><a href="payments.html">Support Me</a></li>
+            <li><a href="exclusive.html">Exclusive</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="promote-hero">
+        <h1>Where I Promote</h1>
+        <p>Follow me on my socials for free content, behind-the-scenes, and more! I'm active 24/7 and would love to connect with you 💕</p>
+    </section>
+
+    <!-- Content Section -->
     <div class="promote-container">
-        <h1>🌟 Where I Promote</h1>
-        <p class="promote-intro">Check out where I post my free content! Follow me for the latest updates and exclusive posts 💕</p>
+        <!-- Security Note -->
+        <div class="security-note">
+            <strong>💡 TIP:</strong> These are my ONLY official social media and free content pages. Follow me here for real free content, updates, DMs, and to stay connected! Always verify links on this website or my linktree (stormy.xo) to avoid impersonators. 🎀
+        </div>
 
         <div class="feed-grid">
             <!-- Twitter/X Feed -->
@@ -142,7 +302,7 @@
                 <div class="feed-content twitter-feed">
                     <a class="twitter-timeline" data-height="450" href="https://x.com/stormladyy">Tweets by stormladyy</a>
                 </div>
-                <a href="https://x.com/stormladyy" target="_blank" class="feed-link-btn">Visit My X Profile →</a>
+                <a href="https://x.com/stormladyy" target="_blank" class="feed-link-btn">Follow Me on X →</a>
             </div>
 
             <!-- Reddit Feed -->
@@ -151,7 +311,7 @@
                 <div class="feed-content reddit-embed">
                     <iframe src="https://www.reddit.com/user/storm-lady/new/.embed" width="100%" height="450" frameborder="0" scrolling="no" allow="web-share" style="border-radius: 12px;"></iframe>
                 </div>
-                <a href="https://www.reddit.com/user/storm-lady/" target="_blank" class="feed-link-btn">Visit My Reddit Profile →</a>
+                <a href="https://www.reddit.com/user/storm-lady/" target="_blank" class="feed-link-btn">Visit My Reddit →</a>
             </div>
         </div>
 
