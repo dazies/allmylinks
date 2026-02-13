@@ -142,6 +142,18 @@
             font-size: 2.5rem;
         }
 
+        .payment-btn-icon img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        /* Larger PayPal logo */
+        .payment-btn.paypal .payment-btn-icon img {
+            width: 88px;
+            height: 88px;
+        }
+
         .payment-btn:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 30px rgba(255, 20, 147, 0.3);
@@ -346,15 +358,15 @@
             <h2>Direct Payments</h2>
             <div class="payment-grid">
                 <a href="https://cash.app/sincereslm" target="_blank" class="payment-btn">
-                    <span class="payment-btn-icon">💵</span>
+                    <span class="payment-btn-icon"><img src="images/cashapp.png" alt="CashApp"></span>
                     CashApp
                 </a>
-                <a href="https://paypal.me/sincereSLM" target="_blank" class="payment-btn">
-                    <span class="payment-btn-icon">🅿️</span>
+                <a href="https://paypal.me/sincereSLM" target="_blank" class="payment-btn paypal">
+                    <span class="payment-btn-icon"><img src="images/paypal.png" alt="PayPal"></span>
                     PayPal
                 </a>
                 <a href="https://throne.com/stormlady" target="_blank" class="payment-btn">
-                    <span class="payment-btn-icon">👑</span>
+                    <span class="payment-btn-icon"><img src="images/Throne.png" alt="Throne"></span>
                     Throne
                 </a>
             </div>
